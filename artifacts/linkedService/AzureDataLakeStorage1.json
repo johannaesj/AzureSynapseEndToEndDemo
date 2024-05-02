@@ -1,0 +1,21 @@
+{
+	"name": "AzureDataLakeStorage1",
+	"type": "Microsoft.Synapse/workspaces/linkedservices",
+	"properties": {
+		"parameters": {
+			"StorageName": {
+				"type": "string",
+				"defaultValue": "storagewsynapse8745w"
+			}
+		},
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "@{concat('https://',linkedService().StorageName,'.dfs.core.windows.net')}"
+		},
+		"connectVia": {
+			"referenceName": "AutoResolveIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
